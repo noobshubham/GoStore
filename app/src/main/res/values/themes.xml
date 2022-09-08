@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.GoStore" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.GoStore" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/peach</item>
+        <item name="colorPrimaryVariant">@color/peach</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +12,58 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <!-- Source: https://github.com/hellosagar/Quiz-App -->
+        <item name="android:textColor">@color/black</item>
+        <!-- Source: https://github.com/hellosagar/Quiz-App -->
     </style>
+
+    <style name="Theme.GoStore.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.GoStore.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.GoStore.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Source: https://github.com/hellosagar/Quiz-App -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_image</item>
+        <item name="postSplashScreenTheme">@style/Theme.GoStore</item>  # Required.
+    </style>
+
+    <style name="editTextLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxBackgroundColor">@color/edit_text_bg</item>
+        <item name="boxCornerRadiusTopStart">@dimen/edit_text_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/edit_text_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/edit_text_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/edit_text_corner_radius</item>
+    </style>
+
+    <style name="MyAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/peach</item>
+    </style>
+
+    <style name="edtTextInputStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/peach</item>
+        <item name="hintTextColor">@color/peach</item>
+    </style>
+
+    <style name="btnStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/peach</item>
+        <item name="cornerRadius">@dimen/btn_radius</item>
+        <item name="android:layout_height">@dimen/btn_height</item>
+    </style>
+
+    <style name="titleTextStyle">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- Source: https://github.com/hellosagar/Quiz-App -->
+
 </resources>

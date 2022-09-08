@@ -3,7 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/arrow.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/buttonshapewhitebg.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_email_white_24dp.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_lock_white_24dp.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/icon.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/splash_image.xml" value="0.2095" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_maps.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_registration.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/fragment_signup.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/test.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

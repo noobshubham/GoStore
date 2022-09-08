@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Source: https://github.com/hellosagar/Quiz-App -->
+    <color name="peach">#FF6F5E</color>
+    <color name="gray">#A0A3B1</color>
+    <color name="edit_text_bg">#F2F3F7</color>
+
+    <color name="blue_med">#03A9F4</color>
+    <color name="light_blue_med">#89C4DA</color>
+    <!-- Source: https://github.com/hellosagar/Quiz-App -->
 </resources>
