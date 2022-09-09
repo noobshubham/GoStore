@@ -87,17 +87,16 @@
             app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
+
         <TextView
             android:id="@+id/tvSignUp4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp"
             android:padding="2dp"
             android:text="@string/don_t_have_an_account"
             android:textColor="@color/gray"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/tvSignUp"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
@@ -116,6 +115,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvSignUp4"
             app:layout_constraintTop_toTopOf="@+id/tvSignUp4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/google_button"
+            style="@style/googleBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="60dp"
+            android:drawableLeft="@drawable/ic_google"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSignUp4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

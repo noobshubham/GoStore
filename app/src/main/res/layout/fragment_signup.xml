@@ -11,13 +11,13 @@
         tools:context=".registration.SignupFragment">
 
         <ImageView
-            android:contentDescription="@string/back_arrow"
             android:id="@+id/imageView"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back_arrow"
             android:padding="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -59,7 +59,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutPassword"
+            android:id="@+id/textInputLayoutEmail"
             style="@style/editTextLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tietPassword"
+                android:id="@+id/tietEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
@@ -89,10 +89,10 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
             app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiePassword"
+                android:id="@+id/tietPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
