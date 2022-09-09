@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.content.IntentSender
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -84,24 +85,53 @@ class LoginFragment : Fragment() {
                         null, 0, 0, 0, null
                     )
                 } catch (e: IntentSender.SendIntentException) {
-                    Snackbar.make(binding.root, e.message.toString(), Snackbar.LENGTH_INDEFINITE)
+                    Snackbar.make(binding.root, e.message.toString(), Snackbar.LENGTH_SHORT)
                         .show()
                 }
             }
             .addOnFailureListener(requireActivity()) { e ->
-                Snackbar.make(binding.root, e.message.toString(), Snackbar.LENGTH_INDEFINITE).show()
+                Snackbar.make(binding.root, e.message.toString(), Snackbar.LENGTH_SHORT).show()
             }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val googleCredential = oneTapClient.getSignInCredentialFromIntent(data)
+        val idToken = googleCredential.googleIdToken
+        when {
+            idToken != null -> {
+                // Got an ID token from Google. Use it to authenticate
+                // with Firebase.
+                val firebaseCredential = GoogleAuthProvider.getCredential(idToken, null)
+                auth.signInWithCredential(firebaseCredential)
+                    .addOnCompleteListener(requireActivity()) { task ->
+                        if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
+                            updateUI()
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Snackbar.make(
+                                binding.root,
+                                task.exception?.message.toString(),
+                                Snackbar.LENGTH_INDEFINITE
+                            ).show()
+                        }
+                    }
+            }
+            else -> Snackbar.make(binding.root, "No Token Found!", Snackbar.LENGTH_SHORT).show()
+        }
     }
 
     override fun onStart() {
         super.onStart()
-        if (auth.currentUser != null)
-            updateUI()
+        updateUI()
     }
 
     private fun updateUI() {
-        requireActivity().startActivity(Intent(context, MapsActivity::class.java))
-        requireActivity().finish()
+        if (auth.currentUser != null) {
+            requireActivity().startActivity(Intent(context, MapsActivity::class.java))
+            requireActivity().finish()
+        }
     }
 
     override fun onDestroyView() {

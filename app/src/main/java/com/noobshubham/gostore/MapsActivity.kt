@@ -40,7 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-        mapView = mapFragment.requireView()
+        // mapView = mapFragment.requireView()
     }
 
     /**
@@ -56,10 +56,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
 
-        map.setMyLocationEnabled(true)
+        // map.setMyLocationEnabled(true)
 
         // Configure map
         map.uiSettings.isZoomControlsEnabled = true
-        map.uiSettings.isMyLocationButtonEnabled = true
+        // map.uiSettings.isMyLocationButtonEnabled = true
     }
 }
