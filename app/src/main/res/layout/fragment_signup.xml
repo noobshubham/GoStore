@@ -108,9 +108,22 @@
             android:layout_marginTop="24dp"
             android:text="@string/create"
             app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPasswordRegister"
-            app:layout_constraintHorizontal_bias="0.464"
             app:layout_constraintStart_toStartOf="@+id/textInputLayoutPasswordRegister"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPasswordRegister" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="120dp"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/btnRegister"
+            app:layout_constraintStart_toStartOf="@id/btnRegister"
+            app:layout_constraintTop_toBottomOf="@id/btnRegister" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

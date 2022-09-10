@@ -1,39 +1,35 @@
 package com.noobshubham.gostore.registration
 
-import android.app.Activity
 import android.content.Intent
 import android.content.IntentSender
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.ktx.Firebase
 import com.noobshubham.gostore.MapsActivity
-import com.noobshubham.gostore.R
 import com.noobshubham.gostore.databinding.FragmentLoginBinding
+import com.noobshubham.gostore.model.UserData
 
 class LoginFragment : Fragment() {
 
     private val REQ_ONE_TAP: Int = 300
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    // progressBar
+    private lateinit var progressBar: ProgressBar
 
     // to verify firebase authentication
     private lateinit var auth: FirebaseAuth
@@ -49,13 +45,23 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         auth = FirebaseAuth.getInstance()
+        progressBar = binding.progressBar
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvSignUp.setOnClickListener { findNavController().navigate(R.id.action_loginFragment_to_signupFragment) }
+        binding.tvSignUp.setOnClickListener { findNavController().navigate(com.noobshubham.gostore.R.id.action_loginFragment_to_signupFragment) }
+
+        binding.btnLogin.setOnClickListener {
+            val inputEmail = binding.tietEmail.text.toString().trim()
+            val inputPassword = binding.tiePassword.text.toString().trim()
+
+            val userData = UserData("${auth.currentUser}", inputEmail, inputPassword)
+
+            if (validateInput(userData)) signIn(userData)
+        }
 
         oneTapClient = Identity.getSignInClient(requireActivity())
         // initiate the auth variable
@@ -64,7 +70,7 @@ class LoginFragment : Fragment() {
                 BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
                     .setSupported(true)
                     // Your server's client ID, not your Android client ID.
-                    .setServerClientId(getString(R.string.default_web_client_id))
+                    .setServerClientId(getString(com.noobshubham.gostore.R.string.default_web_client_id))
                     // Only show accounts previously used to sign in.
                     .setFilterByAuthorizedAccounts(false)
                     .build()
@@ -74,6 +80,38 @@ class LoginFragment : Fragment() {
 
         // auth button click listener
         binding.googleButton.setOnClickListener { signInWithGoogle() }
+    }
+
+    private fun signIn(userData: UserData) {
+        progressBar.visibility = View.VISIBLE
+
+        auth.signInWithEmailAndPassword(userData.email, userData.password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    Toast.makeText(
+                        context, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    updateUI(null)
+                }
+                progressBar.visibility = View.GONE
+            }
+    }
+
+    private fun validateInput(userData: UserData): Boolean {
+        if (userData.email.isEmpty()) {
+            binding.tietEmail.error = "Email is empty."
+            return false
+        }
+        if (userData.password.isEmpty()) {
+            binding.tiePassword.error = "Password is empty."
+            return false
+        }
+        return true
     }
 
     private fun signInWithGoogle() {
@@ -107,7 +145,7 @@ class LoginFragment : Fragment() {
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
-                            updateUI()
+                            updateUI(auth.currentUser)
                         } else {
                             // If sign in fails, display a message to the user.
                             Snackbar.make(
@@ -122,13 +160,17 @@ class LoginFragment : Fragment() {
         }
     }
 
+
     override fun onStart() {
         super.onStart()
-        updateUI()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if (currentUser != null) updateUI(currentUser)
     }
 
-    private fun updateUI() {
-        if (auth.currentUser != null) {
+    private fun updateUI(user: FirebaseUser?) {
+        progressBar.visibility = View.GONE
+        if (user != null) {
             requireActivity().startActivity(Intent(context, MapsActivity::class.java))
             requireActivity().finish()
         }
