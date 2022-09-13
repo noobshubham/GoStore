@@ -16,4 +16,7 @@
     <color name="blue_med">#03A9F4</color>
     <color name="light_blue_med">#89C4DA</color>
     <!-- Source: https://github.com/hellosagar/Quiz-App -->
+
+    <color name="blue_shade_1">#0e2433</color>
+    <color name="blue_shade_2">#1C4966</color>
 </resources>

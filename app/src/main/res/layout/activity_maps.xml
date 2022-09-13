@@ -24,14 +24,107 @@
         app:mt_roundedSearchBarEnabled="true"
         app:mt_speechMode="true" />
 
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchbar">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnRestaurants"
+                style="@style/materialButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/restaurants"
+                app:icon="@drawable/ic_restaurants" />
+
+            <Button
+                android:id="@+id/btnHospitals"
+                style="@style/materialButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hospitals"
+                app:icon="@drawable/ic_doctor" />
+
+            <Button
+                android:id="@+id/btnATMs"
+                style="@style/materialButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/atms"
+                app:icon="@drawable/ic_credit_card" />
+
+            <Button
+                android:id="@+id/btnBanks"
+                style="@style/materialButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/banks"
+                app:icon="@drawable/ic_bank" />
+
+            <Button
+                android:id="@+id/btnSchools"
+                style="@style/materialButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/schools"
+                app:icon="@drawable/ic_school" />
+
+            <Button
+                android:id="@+id/btnHotels"
+                style="@style/materialButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hotels"
+                app:icon="@drawable/ic_bed" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
+        map:cameraTilt="30"
+        map:cameraZoom="13"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toBottomOf="@id/searchbar"
+        map:mapType="normal"
+        map:uiCompass="true"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="false"
+        map:uiTiltGestures="true"
+        map:uiZoomControls="false"
+        map:uiZoomGestures="true"
         tools:context=".MapsActivity" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/show_list"
+        style="@style/takeNotes"
+        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        android:drawableLeft="@drawable/ic_notes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

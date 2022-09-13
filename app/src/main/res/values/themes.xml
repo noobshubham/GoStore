@@ -61,6 +61,18 @@
         <item name="android:layout_height">@dimen/btn_height</item>
     </style>
 
+    <style name="materialButtons" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="cornerRadius">50dp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textColor">#3c4043</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="googleBtn" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/white</item>
         <item name="cornerRadius">12dp</item>
@@ -74,6 +86,21 @@
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:text">Sign in with Google</item>
+    </style>
+
+    <style name="takeNotes" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/white</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#000000</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:text">Show List</item>
     </style>
 
     <style name="titleTextStyle">

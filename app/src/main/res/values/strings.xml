@@ -11,6 +11,14 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+    <!-- Horizontal Search Buttons -->
+    <string name="restaurants">Restaurants</string>
+    <string name="hospitals">Hospitals</string>
+    <string name="banks">Banks</string>
+    <string name="schools">Schools</string>
+    <string name="hotels">Hotels</string>
+    <string name="atms">ATMs</string>
+
     <!-- Source: https://github.com/hellosagar/Quiz-App -->
     <string name="password">Password</string>
     <string name="login">Login</string>
@@ -78,4 +86,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="back_arrow">Back Arrow</string>
     <!-- Source: https://github.com/hellosagar/Quiz-App -->
+
+    <string name="location">Location permission is required to run the demo</string>
+    <string name="default_info_title">Default Location</string>
+    <string name="default_info_snippet">No places found, because location permission is disabled.</string>
+    <string name="option_get_place">Get place</string>
+    <string name="pick_place">Choose a place</string>
+    
+    <string name="quantity">x%d</string>
+    <string name="rate">\u20B9%d</string>
+    <string name="total_amount">\u20B9%d</string>
 </resources>

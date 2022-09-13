@@ -5,17 +5,32 @@
       <map>
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/arrow.xml" value="0.2115" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/buttonshapewhitebg.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/custom_button_back.xml" value="0.1" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_bank.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_bed.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_credit_card.xml" value="0.2115" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_email_white_24dp.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_google.xml" value="0.157" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_lock_white_24dp.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_notes.xml" value="0.157" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_playlist.xml" value="0.104" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_restaurants.xml" value="0.2115" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/ic_school.xml" value="0.2115" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/icon.xml" value="0.2115" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/drawable/splash_image.xml" value="0.2095" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_details.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_grocery.xml" value="0.2" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_maps.xml" value="0.1" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_maps.xml" value="0.67" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/activity_registration.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/custom_info_contents.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/fragment_login.xml" value="0.22" />
-        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/fragment_signup.xml" value="0.1" />
-        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/test.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/fragment_signup.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/grocery_add_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/single_item_view.xml" value="0.43191964285714285" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/layout/test.xml" value="0.5" />
+        <entry key="..\:/Users/shubham/AndroidStudioProjects/GoStore/app/src/main/res/menu/current_place_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
