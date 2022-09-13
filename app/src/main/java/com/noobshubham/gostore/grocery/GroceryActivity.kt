@@ -57,7 +57,7 @@ class GroceryActivity : AppCompatActivity(), GroceryAdapter.GroceryItemClickInte
 
     @SuppressLint("NotifyDataSetChanged")
     private fun openDialog() {
-        val dialog = Dialog(this)
+        val dialog = Dialog(this, R.style.NewDialog)
         dialog.setContentView(R.layout.grocery_add_dialog)
 
         val cancel: Button = dialog.findViewById(R.id.idBtnCancel)
