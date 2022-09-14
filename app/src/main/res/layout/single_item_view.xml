@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/materialCardView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginBottom="4dp"
-    android:padding="8dp"
-    app:cardBackgroundColor="#f1f1f1"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="4dp">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,7 +20,6 @@
                 android:id="@+id/name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
                 android:layout_weight="2"
                 android:padding="4dp"
                 android:text="Item Name" />
@@ -37,7 +28,6 @@
                 android:id="@+id/quantity"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
                 android:layout_weight="1"
                 android:padding="4dp"
                 android:text="@string/quantity" />
@@ -46,19 +36,16 @@
                 android:id="@+id/rate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
                 android:layout_weight="1.5"
                 android:padding="4dp"
                 android:text="@string/rate" />
 
             <ImageView
                 android:id="@+id/delete"
+                style="@style/iconDrawable"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="0.5"
-                android:padding="4dp"
-                android:src="@drawable/ic_baseline_delete_24" />
+                android:layout_weight="0.5" />
 
         </LinearLayout>
 

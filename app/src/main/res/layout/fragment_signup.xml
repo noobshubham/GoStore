@@ -12,17 +12,13 @@
 
         <ImageView
             android:id="@+id/imageView"
+            style="@style/arrow"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
             android:background="?selectableItemBackgroundBorderless"
             android:contentDescription="@string/back_arrow"
-            android:padding="4dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow"
-            app:tint="@color/black" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView"
