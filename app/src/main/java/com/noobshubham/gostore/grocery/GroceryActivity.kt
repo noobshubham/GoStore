@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -51,11 +52,9 @@ class GroceryActivity : AppCompatActivity(), GroceryAdapter.GroceryItemClickInte
                 binding.tempTextView.visibility = View.VISIBLE
             }
         })
-
         binding.fab.setOnClickListener { openDialog() }
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     private fun openDialog() {
         val dialog = Dialog(this, R.style.NewDialog)
         dialog.setContentView(R.layout.grocery_add_dialog)
@@ -69,22 +68,36 @@ class GroceryActivity : AppCompatActivity(), GroceryAdapter.GroceryItemClickInte
         cancel.setOnClickListener { dialog.dismiss() }
 
         add.setOnClickListener {
-            val itemName: String = item.text.toString()
-            val itemPrice: String = price.text.toString()
-            val itemQuantity: String = quantity.text.toString()
-            val qty: Int = itemQuantity.toInt()
-            val pr: Int = itemPrice.toInt()
-
-            if (itemName.isNotEmpty() && itemPrice.isNotEmpty() && itemQuantity.isNotEmpty()) {
-                val items = GroceryEntities(itemName, qty, pr)
-                groceryViewModal.insert(items)
-                Toast.makeText(this, "Item Added!", Toast.LENGTH_SHORT).show()
-                groceryAdapter.notifyDataSetChanged()
+            if (validateInput(item, quantity, price)) {
+                addItemToDB(item.text.toString(), quantity.text.toString(), price.text.toString())
                 dialog.dismiss()
-            } else
-                Toast.makeText(this, "Please Enter the Data!", Toast.LENGTH_SHORT).show()
+            }
         }
         dialog.show()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun addItemToDB(itemName: String, quantity: String, price: String) {
+        val items = GroceryEntities(itemName, quantity.toInt(), price.toInt())
+        groceryViewModal.insert(items)
+        Toast.makeText(this, "Item Added!", Toast.LENGTH_SHORT).show()
+        groceryAdapter.notifyDataSetChanged()
+    }
+
+    private fun validateInput(item: TextView, quantity: TextView, price: TextView): Boolean {
+        if (item.text.isEmpty()) {
+            item.error = "Name is empty."
+            return false
+        }
+        if (quantity.text.isEmpty()) {
+            quantity.error = "Quantity is empty."
+            return false
+        }
+        if (price.text.isEmpty()) {
+            price.error = "Price is empty."
+            return false
+        }
+        return true
     }
 
     @SuppressLint("NotifyDataSetChanged")
