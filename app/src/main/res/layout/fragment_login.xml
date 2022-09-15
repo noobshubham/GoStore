@@ -85,8 +85,8 @@
             app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
             app:layout_constraintHorizontal_bias="0.464"
             app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
-
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvSignUp4"
@@ -100,7 +100,8 @@
             app:layout_constraintEnd_toStartOf="@+id/tvSignUp"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvSignUp"
@@ -114,7 +115,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/tvSignUp4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvSignUp4"
-            app:layout_constraintTop_toTopOf="@+id/tvSignUp4" />
+            app:layout_constraintTop_toTopOf="@+id/tvSignUp4"
+            tools:ignore="TextContrastCheck" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/google_button"
