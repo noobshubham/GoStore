@@ -8,7 +8,7 @@
 
     <com.mancj.materialsearchbar.MaterialSearchBar
         android:id="@+id/searchbar"
-        style="@style/MaterialSearchBarLight"
+        style="@style/materialSearchBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
@@ -120,7 +120,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/show_list"
-        style="@style/takeNotes"
+        style="@style/btnTakeNotes"
         android:layout_width="wrap_content"
         android:layout_margin="16dp"
         android:drawableLeft="@drawable/ic_notes"

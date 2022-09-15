@@ -199,7 +199,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun checkLocationPermission(): Boolean {
-        if (ContextCompat.checkSelfPermission(
+        return if (ContextCompat.checkSelfPermission(
                 this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(
                     this, ACCESS_FINE_LOCATION))
@@ -208,9 +208,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             else
                 ActivityCompat.requestPermissions(
                     this, arrayOf(ACCESS_FINE_LOCATION), MY_PERMISSION_CODE)
-            return false
+            false
         } else
-            return true
+            true
     }
 
     @SuppressLint("MissingPermission")

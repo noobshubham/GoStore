@@ -122,7 +122,7 @@
         <item name="android:padding">4dp</item>
     </style>
 
-    <style name="takeNotes" parent="Widget.MaterialComponents.Button">
+    <style name="btnTakeNotes" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/white</item>
         <item name="cornerRadius">12dp</item>
         <item name="android:textSize">14sp</item>
@@ -136,6 +136,8 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:text">Show List</item>
     </style>
+
+    <style name="materialSearchBar" parent="MaterialSearchBarLight" />
 
     <style name="titleTextStyle">
         <item name="android:textSize">28sp</item>
