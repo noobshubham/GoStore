@@ -153,8 +153,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun firebaseAuthWithGoogle(googleIdToken: String) {
-        val credential = GoogleAuthProvider.getCredential(googleIdToken, null)
-        auth.signInWithCredential(credential)
+        val firebaseCredential = GoogleAuthProvider.getCredential(googleIdToken, null)
+        auth.signInWithCredential(firebaseCredential)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
@@ -188,7 +188,7 @@ class LoginFragment : Fragment() {
             when (e.statusCode) {
                 CommonStatusCodes.CANCELED -> {
                     // The user closed the dialog
-                    userDeclinedOneTap = true
+                    // userDeclinedOneTap = true
                 }
                 CommonStatusCodes.NETWORK_ERROR -> {
                     // No Internet connection ?
