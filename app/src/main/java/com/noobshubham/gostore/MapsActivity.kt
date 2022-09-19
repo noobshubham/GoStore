@@ -28,6 +28,7 @@ import com.noobshubham.gostore.remote.IGoogleAPIService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -163,7 +164,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         googlePlaceUrl.append("?keyword=cruise&location=$latitude,$longitude")
         googlePlaceUrl.append("&radius=20000") // 20km
         googlePlaceUrl.append("&type=$typePlace")
-        googlePlaceUrl.append("&key=AIzaSyC3X2-RnrsMA2yX6RPnOsmW2C5wuEeK0s0")
+        googlePlaceUrl.append(("&key=${this.getString(R.string.maps_api_key)}"))
         Log.d("url_debug", googlePlaceUrl.toString())
         return googlePlaceUrl.toString()
     }
